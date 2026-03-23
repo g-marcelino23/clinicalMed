@@ -11,6 +11,17 @@ const pacienteRoutes = require('./routes/pacienteRoutes');
 const medicoRoutes = require('./routes/medicoRoutes');
 const agendaRoutes = require('./routes/agendaRoutes');
 const consultaRoutes = require('./routes/consultaRoutes');
+const prontuarioRoutes = require('./routes/prontuarioRoutes');
+const prescricaoRoutes = require('./routes/prescricaoRoutes');
+const exameRoutes = require('./routes/exameRoutes');
+const portalPacienteRoutes = require('./routes/portalPacienteRoutes');
+const checkinRoutes = require('./routes/checkinRoutes');
+const notificacaoRoutes = require('./routes/notificacaoRoutes');
+const listaEsperaRoutes = require('./routes/listaEsperaRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
+const relatorioRoutes = require('./routes/relatorioRoutes');
+const indicadorRoutes = require('./routes/indicadorRoutes');
+
 const authMiddleware = require('./middlewares/authMiddleware');
 const roleMiddleware = require('./middlewares/roleMiddleware');
 
@@ -19,6 +30,16 @@ app.use('/pacientes', pacienteRoutes);
 app.use('/medicos', medicoRoutes);
 app.use('/agendas', agendaRoutes);
 app.use('/consultas', consultaRoutes);
+app.use('/prontuarios', prontuarioRoutes);
+app.use('/prescricoes', prescricaoRoutes);
+app.use('/exames', exameRoutes);
+app.use('/portal/paciente', portalPacienteRoutes);
+app.use('/checkin', checkinRoutes);
+app.use('/notificacoes', notificacaoRoutes);
+app.use('/lista-espera', listaEsperaRoutes);
+app.use('/dashboard', dashboardRoutes);
+app.use('/relatorios', relatorioRoutes);
+app.use('/indicadores', indicadorRoutes);
 
 app.get('/', (req, res) => {
   res.json({ mensagem: 'API do sistema médico funcionando!' });
